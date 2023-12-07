@@ -1,0 +1,55 @@
+.main-page-container {
+  margin: 15px;
+  background-color: rgba(255, 245, 245, 0.96);
+  padding: 25px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-welcome {
+  text-align: center;
+  margin-top: 25px;
+  font-family: "Roboto Light", sans-serif;
+}
+
+.main-welcome h1 {
+  margin-bottom: 8px;
+}
+
+
+.get-started-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #005BBB;
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.get-started-button:hover {
+  background-color: #FFD500;
+  color: #000;
+}
+
+.features {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  justify-content: space-between;
+}
+
+.feature {
+  padding: 20px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+

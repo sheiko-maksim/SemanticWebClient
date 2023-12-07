@@ -1,0 +1,71 @@
+.navbar {
+  height: 7vh;
+  background-color: rgba(0, 116, 183);
+  border-radius: 20px;
+  margin: 10px 10px 50px 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-list ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-item {
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.navbar-list {
+  width: 60%;
+}
+
+.navbar a {
+  color: white !important;
+  font-size: 20px;
+  font-family: "Roboto Light", sans-serif;
+}
+
+.navbar-brand {
+  margin-left: 40px;
+  font-weight: bold;
+  line-height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo-icon {
+  width: 50px;
+  height: 50px;
+  filter: brightness(0) invert(1);
+}
+
+.login-icon {
+  width: 45px;
+  height: 45px;
+  filter: brightness(0) invert(1);
+  margin-left: 5px;
+}
+
+.nav-login-container {
+  margin-right: 40px;
+}
+
+.logo-name {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+#login {
+  margin-left: auto;
+}
+

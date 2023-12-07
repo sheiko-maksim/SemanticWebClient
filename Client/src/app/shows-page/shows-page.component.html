@@ -1,0 +1,61 @@
+<div class="movie-container">
+  <div class="filters-container">
+    <h3>Фільтри</h3>
+    <div class="filters">
+      <div class="filters-name">
+        <h4>Фільтр за назвою</h4>
+        <mat-form-field class="example-full-width">
+          <input type="text" matInput [(ngModel)]="filterCriteria.name"
+                 placeholder="Title"
+                 (change)="onFilterChange()"
+          >
+        </mat-form-field>
+      </div>
+      <div class="filters-year">
+        <h4>Фільтр за роком виходу</h4>
+        <mat-form-field class="example-full-width">
+          <input type="number" matInput [(ngModel)]="filterCriteria.year"
+                 placeholder="Year"
+                 (change)="onFilterChange()"
+          >
+        </mat-form-field>
+      </div>
+      <div class="filters-genre">
+        <h4>Фільтр за жанром</h4>
+        <mat-form-field>
+          <mat-select [(ngModel)]="filterCriteria.genre" (change)="onFilterChange()">
+            <mat-option value="">Всі жанри</mat-option>
+            <mat-option value="кінокомедія">кінокомедія</mat-option>
+            <mat-option value="документальний фільм">документальний фільм</mat-option>
+            <mat-option value="фільм-трилер">фільм-трилер</mat-option>
+            <mat-option value="історичний фільм">історичний фільм</mat-option>
+            <mat-option value="драматичний фільм">драматичний фільм</mat-option>
+            <mat-option value="воєнний фільм">воєнний фільм</mat-option>
+            <mat-option value="мелодрама">мелодрама</mat-option>
+            <mat-option value="телесеріал">телесеріал</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <div class="movies">
+    <div *ngFor="let movie of displayMovies" class="movie-item">
+      <h3>{{ movie.title }}</h3>
+      <div class="additional-info">
+        <span>Режисер: {{ movie.director }}</span>
+        <span>Дата Виходу: {{ movie.publicationDate.substring(0, 10) }}</span>
+        <span>Жанри: {{ movie.genres }}</span>
+        <span>Теми: {{ movie.topics }}</span>
+        <a href="https://www.imdb.com/title/{{movie.imdb}}" *ngIf="movie.imdb">
+          Посилання на IMDB</a>
+      </div>
+    </div>
+  </div>
+  <mat-paginator
+    #newPaginator pageSize="{{pageSize}}"
+    length="{{dataLength}}"
+    [pageSizeOptions]="[12, 24, 36]"
+    pageIndex="currentPage"
+    (page)="onPageChange($event)">
+  </mat-paginator>
+</div>

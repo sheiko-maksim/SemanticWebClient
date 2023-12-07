@@ -1,0 +1,46 @@
+<div class="signup-page">
+  <div class="signup-container">
+    <div class="signup-header">
+      <h4>Sign up to the service</h4>
+    </div>
+    <form
+      class="signup-form"
+      [formGroup]="signupForm"
+      (ngSubmit)="onSubmit()"
+      (reset)="resetForm()"
+    >
+      <p class="text-danger mt-1" *ngIf="!signupResult?.success">
+        {{ signupResult.errors }}
+      </p>
+      <div class="form-group">
+        <label>Email</label>
+        <input
+          class="form-input"
+          formControlName="email"
+        />
+      </div>
+      <div class="form-group">
+        <label>Username</label>
+        <input
+          class="form-input"
+          formControlName="userName"
+        />
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input
+          class="form-input"
+          formControlName="password"
+          type="password"
+        />
+      </div>
+      <div class="btn-container">
+        <button class="signup-btn">Sign up</button>
+      </div>
+    </form>
+    <div class="old-customer">
+      <span>Already have an account? </span>
+      <a  routerLink="/login">Log in</a>
+    </div>
+  </div>
+</div>

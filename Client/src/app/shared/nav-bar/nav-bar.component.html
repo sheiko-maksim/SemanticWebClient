@@ -1,0 +1,46 @@
+<nav class="navbar">
+  <div class="logo">
+    <a class="navbar-brand" routerLink='/'>
+      <span class="logo-name">ToWatchUA</span>
+      <img src="assets/logo.png" alt="icon-movie" class="logo-icon">
+    </a>
+  </div>
+  <div class="navbar-list">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLink='/movies'
+          routerLinkActive="active-route"
+        >Movies</a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLink='/shows'
+          routerLinkActive="active-route"
+        >TV Shows</a>
+      </li>
+    </ul>
+  </div>
+  <div class="nav-login-container">
+    <div class="nav-login-item" id="login" *ngIf="!isLoggedIn">
+      <a
+        class="nav-link"
+        routerLink='/login'
+      >
+        <span>Login</span>
+        <img src="assets/login.png" alt="icon-movie" class="login-icon">
+      </a>
+    </div>
+    <div class="nav-login-item" *ngIf="isLoggedIn">
+      <a
+        class="nav-link"
+        (click)="onLogout()"
+      >
+        <span>Logout</span>
+        <img src="assets/logout.png" alt="icon-movie" class="login-icon">
+      </a>
+    </div>
+  </div>
+</nav>
